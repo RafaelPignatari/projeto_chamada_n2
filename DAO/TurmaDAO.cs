@@ -19,6 +19,7 @@ namespace ProjetoN2.DAO
             TurmaViewModel turmaViewModel = new TurmaViewModel();
             turmaViewModel.Id = Convert.ToInt32(row["turma_id"]);
             turmaViewModel.Semestre = Convert.ToInt32(row["turma_semestre"]);
+            turmaViewModel.Nome = row["nome"].ToString();
             if(row.Table.Columns.Contains("curso_nome"))
             {
                 turmaViewModel.CursoNome = row["curso_nome"].ToString();
