@@ -5,6 +5,5 @@ namespace ProjetoN2.Models
         public int Semestre { get; set; }
         public int CursoId { get; set; }
         public string CursoNome { get; set; }
-        public string Nome { get; set; }
     }
 }
