@@ -1,0 +1,27 @@
+@model ProjetoN2.Models.MateriaViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form class="form-horizontal" asp-action="Save" asp-controller="Materia">
+        <input type="hidden" asp-for="Id">
+
+        <label asp-for="Nome"></label>
+        <input class="form-control" asp-for="Nome">
+        <span class="text-danger" asp-validation-for="Nome"></span>
+        <br>
+
+        <label asp-for="CursoId"></label>
+        <select class="form-control" asp-for="CursoId" asp-items='@(new SelectList(ViewBag.Cursos, "Id", "Nome"))'></select>
+        <span class="text-danger" asp-validation-for="CursoId"></span>
+        <br>
+
+        <label asp-for="ProfessorId"></label>
+        <select class="form-control" asp-for="ProfessorId" asp-items='@(new SelectList(ViewBag.Professores, "Id", "Nome"))'></select>
+        <span class="text-danger" asp-validation-for="ProfessorId"></span>
+        <br>
+        
+        <button class="btn btn-outline-dark">Salvar</button>
+    </form>
+</div>

@@ -1,0 +1,47 @@
+﻿@model ProjetoN2.Models.UserViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo</h1>
+    @if(!ViewBag.Logged)
+    {
+        <div class="row mt-5">
+            <div class="col-6">
+            <h3>Login</h3>
+            <form asp-action="Login" asp-controller="Home">
+                <label asp-for="Username"></label>
+                <input class="form-control" asp-for="Username" required>
+                <br>
+                
+                <label asp-for="Password"></label>
+                <input class="form-control" type="password" asp-for="Password" required>
+                <br>
+                <span class="text-danger" asp-validation-for="Error"></span>
+                <br>
+                <button class="btn btn-outline-dark">Logar</button>
+            </form>
+            </div>
+
+            <div class="col-6">
+            <h3>Regitrar</h3>
+            <form asp-action="Register" asp-controller="Home">
+                <label asp-for="Username"></label>
+                <input class="form-control" asp-for="Username" required>
+                <br>
+                
+                <label asp-for="Password"></label>
+                <input class="form-control" type="password" asp-for="Password" required>
+                <br>
+                <label asp-for="ConfirmPassword"></label>
+                <input class="form-control" type="password" asp-for="ConfirmPassword" required>
+                <br>
+                <span class="text-danger" asp-validation-for="Error"></span>
+                <br>
+                <button class="btn btn-outline-dark">Regitrar</button>
+            </form>
+            </div>
+        </div>
+    }
+</div>

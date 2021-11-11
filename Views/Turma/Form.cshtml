@@ -1,0 +1,22 @@
+@model ProjetoN2.Models.TurmaViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form class="form-horizontal" asp-action="Save" asp-controller="Turma">
+        <input type="hidden" asp-for="Id">
+
+        <label asp-for="CursoId"></label>
+        <select class="form-control" asp-for="CursoId" asp-items='@(new SelectList(ViewBag.Cursos, "Id", "Nome"))'></select>
+        <span class="text-danger" asp-validation-for="CursoId"></span>
+        <br>
+
+        <label asp-for="Semestre"></label>
+        <input min="1" max="10" class="form-control" asp-for="Semestre">
+        <span class="text-danger" asp-validation-for="Semestre"></span>
+        <br>
+
+        <button class="btn btn-outline-dark">Salvar</button>
+    </form>
+</div>

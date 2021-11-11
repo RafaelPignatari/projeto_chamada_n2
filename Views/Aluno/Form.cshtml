@@ -1,0 +1,22 @@
+@model ProjetoN2.Models.AlunoViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form class="form-horizontal" asp-action="Save" asp-controller="Aluno">
+        <input type="hidden" asp-for="Id">
+
+        <label asp-for="Nome"></label>
+        <input class="form-control" asp-for="Nome">
+        <span class="text-danger" asp-validation-for="Nome"></span>
+        <br>
+
+        <label asp-for="TurmaId"></label>
+        <select class="form-control" asp-for="TurmaId" asp-items='@(new SelectList(ViewBag.Turmas, "Id", "Id"))'></select>
+        <span class="text-danger" asp-validation-for="TurmaId"></span>
+        <br>
+        
+        <button class="btn btn-outline-dark">Salvar</button>
+    </form>
+</div>

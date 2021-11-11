@@ -1,0 +1,16 @@
+@model ProjetoN2.Models.SalaViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form class="form-horizontal" asp-action="Save" asp-controller="Sala">
+        <input type="hidden" asp-for="Id">
+        <label asp-for="Capacidade"></label>
+        <input class="form-control" asp-for="Capacidade">
+        <span class="text-danger" asp-validation-for="Capacidade"></span>
+        <br>
+
+        <button class="btn btn-outline-dark">Salvar</button>
+    </form>
+</div>
